@@ -1,0 +1,167 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+.header{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+.trait-egal{
+    background-color: black;
+    height: 7px;
+    width: 40px;
+
+}
+.t1{
+    margin-bottom: 7px;
+}
+.croix{
+    
+    margin-top: 40px;
+    margin-right: 50px;
+}
+ul{
+    list-style: none;
+}
+.nav ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav ul li{
+ padding-left: 40px;
+ padding-right: 40px;
+}
+.croix .t1{
+    transform: rotate(0deg) scale(1);
+    transition-duration: 0.5s;
+}
+.croix:hover .t1{
+    transform: rotate(90deg) scale(1.3);
+    animation-duration: 0.5s;
+    animation-name: trait1;
+    
+}
+
+
+@keyframes trait1{
+    0%{
+        transform: rotate(0deg) scale(1);
+    }
+    100%{
+        transform: rotate(90deg) scale(1.3);
+    }
+}
+
+.croix:hover .t2{
+    transform: translateY(-15px) rotate(180deg) scale(1.3);
+    animation-duration: 0.5s;
+    animation-name: trait2;
+}
+.croix .t2{
+    transform: translateY(0px) rotate(0deg) scale(1);
+    transition-duration: 0.5s;
+}
+
+@keyframes trait2{
+    0%{
+
+       transform: translateY(0px) rotate(0deg) scale(1);
+    }
+    100%{
+        transform: translateY(-15px) rotate(-180deg) scale(1.3);
+    
+    }
+}
+
+
+.fond-section{
+    background-color: #333333;
+    height: 100vh;
+    padding-top: 100px;
+    overflow: hidden;
+}
+
+
+/* Texte défilant */
+.messagedefilant {
+    display: block;
+    margin: 40px auto;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    height: 100px;
+  }
+   
+  .messagedefilant div {
+    position: absolute;
+    min-width: 100%; /* au minimum la largeur du conteneur */
+  }
+   
+  .messagedefilant div span, 
+  .messagedefilant div:after {
+    position: relative;
+    display: inline-block;
+ 
+    white-space: nowrap;
+    top:0;
+    font-size: 80px;
+    -webkit-text-stroke: 1px white;
+  }
+  .messagedefilantInverse div span, 
+  .messagedefilantInverse div:after {
+    position: relative;
+    display: inline-block;
+ 
+    white-space: nowrap;
+    top:0;
+    font-size: 80px;
+    -webkit-text-stroke: 1px white;
+  }
+   
+  .messagedefilant div span {
+    animation: defilement 35s infinite linear;
+  
+  }
+
+  .messagedefilant div span:hover {
+    animation: defilement 55s infinite linear;
+    color: white;
+  }
+  .messagedefilantInverse div span:hover {
+    animation: defilementInverse 35s infinite linear;
+    color: white;
+  }
+
+ 
+   
+  @keyframes defilement {
+    0% { margin-left: 0; }
+    100% { margin-left: -100%; }
+  }
+   
+  @keyframes defilement2 {
+    0% { margin-left: 100%; }
+    100% { margin-left: 0%; }
+  }
+
+  .messagedefilantInverse  div span{
+    animation: defilementInverse 20s infinite linear;
+
+  }
+
+  @keyframes defilementInverse {
+    0% { margin-left: -100%; }
+    100% { margin-left: 0%; }
+  }
+   
+  @keyframes defilement2Inverse {
+    0% { margin-left: 0%; }
+    100% { margin-left: -100%; }
+  }
